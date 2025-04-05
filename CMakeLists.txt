@@ -8,7 +8,7 @@ set(CMAKE_CUDA_STANDARD 17)
 set(CMAKE_CUDA_STANDARD_REQUIRED ON)
 
 # --- Include Directory ---
-include_directories(${PROJECT_SOURCE_DIR}/externel/Qui1framework/include)
+include_directories(${PROJECT_SOURCE_DIR}/external/Qui1Framework/include) # Corrected path
 
 # --- CUDA Architectures ---
 if (NOT DEFINED CMAKE_CUDA_ARCHITECTURES)
@@ -21,6 +21,7 @@ add_subdirectory(external/Qui1Framework)
 
 # --- main build target ---
 add_executable(main main.cu)
+target_link_libraries(main PRIVATE fmt CUDA::cudart CUDA::cusolver CUDA::curand) # Link against fmt library
 
 # --- CUDA Check (Optional, informational) ---
 find_package(CUDAToolkit)
