@@ -1,0 +1,3 @@
+[submodule "external/Qui1Framework"]
+	path = external/Qui1Framework
+	url = git@github.com:Ruinique/Qui1Framework.git
